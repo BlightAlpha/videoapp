@@ -67,7 +67,7 @@ const addComment = async (e: { preventDefault: () => void }) => {
     if (userProfile) {
       if (comment) {
         setIsPostingComment(true);
-        const res = await axios.put(`http://localhost:3000/api/post/${post._id}`, {
+        const res = await axios.put(`${BASE_URL}/api/post/${post._id}`, {
           userId: userProfile._id,
           comment,
         });
@@ -173,7 +173,7 @@ export const getServerSideProps = async ({
 } : {
   params: {id: string}
 }) => {
-  const {data} = await axios.get(` http://localhost:3000/api/post/${id}`);
+  const {data} = await axios.get(`${BASE_URL}/api/post/${id}`);
 
   return {
     props: { postDetails: data },
