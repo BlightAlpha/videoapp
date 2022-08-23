@@ -51,7 +51,7 @@ useEffect(() => {
 
 const handleLike = async (like: boolean) => {
   if (userProfile) {
-    const res = await axios.put(`http://localhost:3000/api/like`, {
+    const res = await axios.put(`${BASE_URL}/api/like`, {
       userId: userProfile._id,
       postId: post._id,
       like
