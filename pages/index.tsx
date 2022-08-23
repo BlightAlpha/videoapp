@@ -37,11 +37,11 @@ export const getServerSideProps = async ({
 
 
   if(topic) {
-    response = await axios.get(`${BASE_URL}/api/discover/${topic}`);
+    response = await axios.get(`https://vivapp-blightalpha.vercel.app/api/discover/${topic}`);
   }
   else
   {
-    response = await axios.get(`${BASE_URL}/api/post`);
+    response = await axios.get(`https://vivapp-blightalpha.vercel.app/api/post`);
   }
 
   return {
